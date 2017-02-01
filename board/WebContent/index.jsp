@@ -20,6 +20,7 @@
 </head>
 <body>
 
+test
 <!-- header include -->
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/header.jsp" />
 <!-- // header include -->
@@ -58,6 +59,5 @@
 		$( ".sortable-ui" ).disableSelection();
 	});
 </script>
-
 </body>
 </html>
