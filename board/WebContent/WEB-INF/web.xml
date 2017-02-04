@@ -64,4 +64,6 @@
 		<url-pattern>/article/write.do</url-pattern>
 		<url-pattern>/article/modify.do</url-pattern>
 	</filter-mapping>
+	
+	
 </web-app>
