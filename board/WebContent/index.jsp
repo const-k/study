@@ -20,7 +20,6 @@
 </head>
 <body>
 
-test
 <!-- header include -->
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/header.jsp" />
 <!-- // header include -->
@@ -36,7 +35,14 @@ test
 	<section id="main-content">
 		<section class="wrapper">
 			<!-- 여기에 내용만 바뀌게 include -->
-			<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/main_content.jsp" />
+			<c:choose>
+				<c:when test="${ not empty content }">
+					<jsp:include page="${ pageContext.request.contextPath }/WEB-INF/view/${ content }" />
+				</c:when>
+				<c:otherwise>
+					<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/main_content.jsp" />
+				</c:otherwise>
+			</c:choose>
 		</section>
 	</section>
 <!-- // main content end -->
@@ -59,5 +65,6 @@ test
 		$( ".sortable-ui" ).disableSelection();
 	});
 </script>
+
 </body>
 </html>

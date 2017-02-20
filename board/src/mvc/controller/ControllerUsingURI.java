@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +30,7 @@ public class ControllerUsingURI extends HttpServlet {
 		} catch (IOException e) {
 			throw new ServletException(e);
 		}
-		Iterator<?> keyIter = prop.keySet().iterator();
+		Iterator keyIter = prop.keySet().iterator();
 		while (keyIter.hasNext()) {
 			String command = (String) keyIter.next();
 			String handlerClassName = prop.getProperty(command);
@@ -62,15 +61,16 @@ public class ControllerUsingURI extends HttpServlet {
 		if (handler == null) {
 			handler = new NullHandler();
 		}
-		String viewPage = null;
+		String defaultPage = "index.jsp";
+		String content = null;
 		try {
-			viewPage = handler.process(request, response);
+			content = handler.process(request, response);
 		} catch (Throwable e) {
 			throw new ServletException(e);
 		}
-		if (viewPage != null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-			dispatcher.forward(request, response);
+		if (content != null) {
+			request.setAttribute("content", content);
+			request.getRequestDispatcher(defaultPage).forward(request, response);
 		}
 	}
 

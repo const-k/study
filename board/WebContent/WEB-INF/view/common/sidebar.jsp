@@ -14,7 +14,7 @@
 		</p>
 		<h5 class="centered">사용자 이름</h5>
 		<li class="mt">
-		<a href="#">
+		<a href="freeBoardList.do">
 		<i class="fa fa-dashboard"></i>
 		<span>자유 게시판</span>
 		</a>

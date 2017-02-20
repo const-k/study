@@ -8,3 +8,4 @@
 <script type="text/javascript" src="../../resources/js/theme/jquery.backstretch.min.js"></script>
 <script type="text/javascript" src="../../resources/js/common/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../../resources/js/theme/tasks.js"></script>
+<script type="text/javascript" src="../../resources/js/comment.js"></script>
